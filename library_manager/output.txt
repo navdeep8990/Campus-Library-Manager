@@ -1,29 +1,35 @@
-=== Abstract class ===
-Cannot create LibraryItem: Can't instantiate abstract class LibraryItem without an implementation for abstract method 'late_fee'
+=== Step 2: LibraryItem is abstract ===
+TypeError: Can't instantiate abstract class LibraryItem without an implementation for abstract method 'late_fee'
 
-=== Borrowing ===
+=== Step 3: Child classes and total_items ===
+Total items at start: 0
+Book: Python 101 by A. Rao (ID 1) | total_items: 1
+Magazine: Tech Monthly, issue 42 (ID 2) | total_items: 2
+DVD: Planet Earth, 120 min (ID 3) | total_items: 3
+Book: Clean Code by R. Martin (ID 4) | total_items: 4
+
+=== Step 4/5: Borrowing with error handling ===
 Alice borrowed: Book: Python 101 by A. Rao (ID 1)
-Could not borrow: 'Python 101' is already borrowed by someone else.
-
-=== Borrow limit ===
-Bob borrowed: Magazine: Tech Monthly, issue 42 (ID 2)
+Could not borrow: 'Python 101' is already borrowed by another member.
+Could not borrow: Alice has already borrowed 'Python 101'.
+Alice borrowed: Magazine: Tech Monthly, issue 42 (ID 2)
+Alice borrowed: DVD: Planet Earth, 120 min (ID 3)
+Could not borrow: Alice has reached the borrow limit of 3 item(s).
+Bob borrowed: Book: Clean Code by R. Martin (ID 4)
+Alice returned: DVD: Planet Earth, 120 min (ID 3)
 Could not borrow: Bob has reached the borrow limit of 1 item(s).
-
-=== Returning ===
 Could not return: Bob has not borrowed 'Python 101'.
 Alice returned 'Python 101' 3 days late. Fee: Rs 6
-Alice's borrowed titles: []
-Bob's borrowed titles: ['Tech Monthly']
+Alice's borrowed titles: ['Tech Monthly']
+Bob's borrowed titles: ['Clean Code']
 
-=== Polymorphism ===
+=== Step 5: Polymorphism ===
 Book: Python 101 by A. Rao (ID 1) -> late fee for 3 days: Rs 6
 Magazine: Tech Monthly, issue 42 (ID 2) -> late fee for 3 days: Rs 3
 DVD: Planet Earth, 120 min (ID 3) -> late fee for 3 days: Rs 15
+Total items created: 4
 
-=== Class attribute ===
-Total items created: 3
-
-=== Encapsulation ===
+=== Step 6: Encapsulation ===
 AttributeError: 'Magazine' object has no attribute '__available'
 Is 'Tech Monthly' available? False
 Is 'Python 101' available? True

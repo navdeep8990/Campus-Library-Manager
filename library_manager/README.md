@@ -20,4 +20,4 @@ Reading `item.__available` from outside the class raises an `AttributeError`, be
 
 **3. What is the difference between `LibraryItem.total_items` and `self.title`?**
 
-`LibraryItem.total_items` is a class attribute: there is only one copy, shared by every item, and it counts how many items have been created (it is 3 in the demo). `self.title` is an instance attribute: each object has its own separate value, such as "Python 101" for the book and "Planet Earth" for the DVD. Changing one object's title does not affect any other object, but updating `total_items` changes the value seen by all of them.
+`LibraryItem.total_items` is a class attribute: there is only one copy, shared by every item, and it counts how many items have been created (it is 4 in the demo). `self.title` is an instance attribute: each object has its own separate value, such as "Python 101" for the book and "Planet Earth" for the DVD. Changing one object's title does not affect any other object, but updating `total_items` changes the value seen by all of them.

@@ -75,8 +75,10 @@ class Member:
         self.__borrowed = []                 # private list of items
 
     def borrow(self, item):
+        if item in self.__borrowed:
+            raise ValueError(f"{self.name} has already borrowed '{item.title}'.")
         if not item.is_available():
-            raise ValueError(f"'{item.title}' is already borrowed by someone else.")
+            raise ValueError(f"'{item.title}' is already borrowed by another member.")
         if len(self.__borrowed) >= self.max_items:
             raise ValueError(
                 f"{self.name} has reached the borrow limit of {self.max_items} item(s)."
