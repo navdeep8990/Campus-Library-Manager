@@ -1,0 +1,29 @@
+=== Abstract class ===
+Cannot create LibraryItem: Can't instantiate abstract class LibraryItem without an implementation for abstract method 'late_fee'
+
+=== Borrowing ===
+Alice borrowed: Book: Python 101 by A. Rao (ID 1)
+Could not borrow: 'Python 101' is already borrowed by someone else.
+
+=== Borrow limit ===
+Bob borrowed: Magazine: Tech Monthly, issue 42 (ID 2)
+Could not borrow: Bob has reached the borrow limit of 1 item(s).
+
+=== Returning ===
+Could not return: Bob has not borrowed 'Python 101'.
+Alice returned 'Python 101' 3 days late. Fee: Rs 6
+Alice's borrowed titles: []
+Bob's borrowed titles: ['Tech Monthly']
+
+=== Polymorphism ===
+Book: Python 101 by A. Rao (ID 1) -> late fee for 3 days: Rs 6
+Magazine: Tech Monthly, issue 42 (ID 2) -> late fee for 3 days: Rs 3
+DVD: Planet Earth, 120 min (ID 3) -> late fee for 3 days: Rs 15
+
+=== Class attribute ===
+Total items created: 3
+
+=== Encapsulation ===
+AttributeError: 'Magazine' object has no attribute '__available'
+Is 'Tech Monthly' available? False
+Is 'Python 101' available? True
